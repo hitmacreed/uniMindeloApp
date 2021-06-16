@@ -1,0 +1,40 @@
+{
+    "LOGIN": {
+        "TITLE": "Uni Mindelo",
+        "BT_TITLE": "Login",
+        "USERNAME": "E-mail ou número de telemóvel",
+        "PASSWORD": "Palavra-passe",
+        "FORGOT_PASSWORD": "Não sabes a tua palavra-passe?"
+    },
+    "FORGOT_PASSWORD": {
+        "TITLE": "Uni Mindelo",
+        "BT_TITLE": "Recuperar Conta",
+        "USERNAME": "E-mail ou número de telemóvel",
+        "EMAIL_SEND": "Um E-mail foi enviado para a sua caixa de correio , por favor verifique."
+    },
+    "HOME": {
+        "TITLE": "Meu Curso",
+        "PROFILE": "Ver Perfil",
+        "GRADES": "Ver Notas",
+        "SEMESTER": "Semestre"
+    },
+    "DIALOG": {
+        "HEADER": {
+            "ERROR": "Erro",
+            "SUCCESS": "Successo",
+            "WARNING": "Alerta"
+        },
+        "DIALOG_BT": {
+            "OK": "OK",
+            "CANCEL": "Cancelar"
+        }
+    },
+    "LOADER_TITLE": "Aguarde",
+    "ERRORS": {
+        "CHECK_FIELDS": "Verifique os campos",
+        "USER_DONT_EXISTS": "Não há registro deste utilizador. O utilizador pode ter sido excluído.",
+        "WRONG_PASSWORD": "Password Errada",
+        "TOO_MANY_REQUESTS": "Atingiu o limite de tentativas por favor tente novamente daqui alguns minutos",
+        "INVALID_EMAIL": "E-mail Invalído"
+    }
+}

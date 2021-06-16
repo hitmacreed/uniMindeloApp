@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "514065793925",
+    "project_id": "unimindelo-347f9",
+    "storage_bucket": "unimindelo-347f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514065793925:android:93a85c0bb5fafdc5dffaec",
+        "android_client_info": {
+          "package_name": "com.example.uni_mindelo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514065793925-j2lbppl8so5s2betj52v7gm4k5ffdkcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg6EEDmpsWhN60msCcp3Gode5Lz7QZoZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514065793925-j2lbppl8so5s2betj52v7gm4k5ffdkcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

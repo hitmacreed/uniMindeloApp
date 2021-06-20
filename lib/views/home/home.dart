@@ -4,11 +4,10 @@ import 'package:flutter_translate/flutter_translate.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:uni_mindelo/apis/fireBaseCalls.dart';
-import 'package:uni_mindelo/components/colors.dart';
+import 'package:uni_mindelo/utils/colors.dart';
+import 'package:uni_mindelo/utils/services/router.dart';
 import 'package:uni_mindelo/utils/services/storage.service.dart';
-import 'package:uni_mindelo/views/auth/login/login.dart';
-import 'package:uni_mindelo/utils/services/loaderService.dart';
-import 'package:uni_mindelo/views/grades/grades.dart';
+import 'package:uni_mindelo/widgets/bottomNavigationBar.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -18,19 +17,18 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   bool _isOpen = false;
   final String userId = getData(user_uid);
-  var userData;
+  Map<String, dynamic> userData = {};
   PanelController _panelController = PanelController();
   Widget build(BuildContext context) {
     var userId = getData(user_uid);
     getUserData(userId).then((DocumentSnapshot documentSnapshot) async {
       if (documentSnapshot.exists && documentSnapshot.data() != null) {
         setState(() {
-          userData = documentSnapshot.data() as Map;
+          userData = {"data": documentSnapshot.data()};
         });
       }
     });
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -87,6 +85,7 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 
@@ -134,7 +133,8 @@ class _HomeState extends State<Home> {
           visible: !_isOpen,
           child: Expanded(
             child: Container(
-              margin: EdgeInsets.only(top: 40),
+              margin: EdgeInsets.only(top: 20),
+              // ignore: deprecated_member_use
               child: OutlineButton(
                 onPressed: () => _panelController.open(),
                 borderSide: BorderSide(color: Colors.blue),
@@ -172,11 +172,12 @@ class _HomeState extends State<Home> {
                               1.6
                           : double.infinity,
                       child: Container(
-                        margin: EdgeInsets.only(top: 40),
+                        margin: EdgeInsets.only(top: 20),
+                        // ignore: deprecated_member_use
                         child: FlatButton(
-                          onPressed: () => Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) => Grades())),
+                          onPressed: () => Navigator.pushNamed(
+                              context, gradesRoute,
+                              arguments: userData['data']['grades']),
                           color: PrimaryColor,
                           textColor: PrimaryWhiteAssentColor,
                           shape: RoundedRectangleBorder(
@@ -194,7 +195,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Visibility(
-                    visible: _isOpen && userData != null,
+                    visible: _isOpen,
                     child: Container(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -215,7 +216,7 @@ class _HomeState extends State<Home> {
                             child: ListTile(
                               leading: Icon(Icons.phone,
                                   color: PrimaryWhiteAssentColor),
-                              title: Text(userData["phoneNumber"] ?? '',
+                              title: Text(userData['data']["phoneNumber"] ?? '',
                                   style: TextStyle(
                                     color: PrimaryWhiteAssentColor,
                                   )),
@@ -229,7 +230,7 @@ class _HomeState extends State<Home> {
                             child: ListTile(
                               leading: Icon(Icons.email,
                                   color: PrimaryWhiteAssentColor),
-                              title: Text(userData["email"] ?? '',
+                              title: Text(userData['data']["email"] ?? '',
                                   style: TextStyle(
                                     color: PrimaryWhiteAssentColor,
                                   )),
@@ -244,10 +245,11 @@ class _HomeState extends State<Home> {
                               leading: Icon(Icons.cake,
                                   color: PrimaryWhiteAssentColor),
                               title: Text(
-                                  ((userData["birthDay"] ?? '' as Timestamp)
+                                  ((userData['data']["birthDay"] ??
+                                          '' as Timestamp)
                                       .toDate()
                                       .toString()
-                                      .split("00:")
+                                      .split(" ")
                                       .first),
                                   style: TextStyle(
                                     color: PrimaryWhiteAssentColor,
@@ -263,7 +265,9 @@ class _HomeState extends State<Home> {
                               leading: Icon(Icons.credit_card,
                                   color: PrimaryWhiteAssentColor),
                               title: Text(
-                                  'Nº Estudante' + ' ' + userData["id_student"],
+                                  'Nº Estudante' +
+                                      ' ' +
+                                      userData['data']["id_student"],
                                   style: TextStyle(
                                     color: PrimaryWhiteAssentColor,
                                   )),
@@ -278,7 +282,8 @@ class _HomeState extends State<Home> {
                               leading: Icon(Icons.credit_card,
                                   color: PrimaryWhiteAssentColor),
                               title: Text(
-                                  userData["isPaid"].toString() == 'true'
+                                  userData['data']["isPaid"].toString() ==
+                                          'true'
                                       ? 'Propina Paga'
                                       : 'Propina por Pagar',
                                   style: TextStyle(
@@ -301,9 +306,7 @@ class _HomeState extends State<Home> {
                                       )),
                                   onTap: () {
                                     deleteData(user_uid);
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) => Login()));
+                                    Navigator.pushNamed(context, loginRoute);
                                   },
                                 )),
                           ),
@@ -323,11 +326,14 @@ class _HomeState extends State<Home> {
     return Column(
       children: <Widget>[
         Visibility(
+          // ignore: unnecessary_null_comparison
           visible: userData != null,
           child: Column(
             children: [
               Text(
-                userData['userName'] + ' ' + userData?['userSurname'],
+                userData['data']['userName'] +
+                    ' ' +
+                    userData['data']['userSurname'],
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 30,
@@ -337,7 +343,7 @@ class _HomeState extends State<Home> {
                 height: 8,
               ),
               Text(
-                userData['course'],
+                userData['data']['course'],
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -346,7 +352,7 @@ class _HomeState extends State<Home> {
                 height: 8,
               ),
               Text(
-                userData['semester'] + ' ' + translate('HOME.SEMESTER'),
+                userData['data']['semester'] + ' ' + translate('HOME.SEMESTER'),
                 style: TextStyle(
                   fontSize: 16,
                 ),

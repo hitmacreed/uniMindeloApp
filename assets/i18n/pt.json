@@ -4,7 +4,7 @@
         "BT_TITLE": "Login",
         "USERNAME": "E-mail ou número de telemóvel",
         "PASSWORD": "Palavra-passe",
-        "FORGOT_PASSWORD": "Não sabes a tua palavra-passe?"
+        "FORGOT_PASSWORD": "Esqueceste a tua palavra-passe?"
     },
     "FORGOT_PASSWORD": {
         "TITLE": "Uni Mindelo",
@@ -27,6 +27,12 @@
         "DIALOG_BT": {
             "OK": "OK",
             "CANCEL": "Cancelar"
+        }
+    },
+    "APP_BAR": {
+        "TITLE": {
+            "FORGOT_PASSWORD": "Recuperar Conta",
+            "GRADES": "Notas"
         }
     },
     "LOADER_TITLE": "Aguarde",

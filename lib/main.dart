@@ -4,12 +4,13 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:uni_mindelo/utils/colors.dart';
+import 'package:uni_mindelo/utils/services/router.dart';
 import 'package:uni_mindelo/utils/services/storage.service.dart';
 import 'package:uni_mindelo/views/home/home.dart';
 import 'dart:ui' as ui;
 //Views
 import './views/auth/login/login.dart';
-import 'components/colors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,6 +36,8 @@ class Main extends StatelessWidget {
     return LocalizationProvider(
       state: LocalizationProvider.of(context).state,
       child: MaterialApp(
+        onGenerateRoute: AppRouter.generateRoute,
+        initialRoute: loginRoute,
         localizationsDelegates: [localizationDelegate],
         debugShowCheckedModeBanner: true,
         theme: ThemeData(

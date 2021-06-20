@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
+import 'package:uni_mindelo/Widgets/background.dart';
 import 'package:uni_mindelo/apis/fireBaseCalls.dart';
-import 'package:uni_mindelo/components/background.dart';
-import 'package:uni_mindelo/components/colors.dart';
-import 'package:uni_mindelo/views/auth/forgotPassword/forgotPassword.dart';
-
+import 'package:uni_mindelo/utils/colors.dart';
+import 'package:uni_mindelo/utils/services/router.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -21,8 +20,7 @@ class _LoginState extends State<Login> {
 
     return Scaffold(
       body: Background(
-        child:
-        Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
@@ -36,6 +34,7 @@ class _LoginState extends State<Login> {
               alignment: Alignment.center,
               margin: EdgeInsets.symmetric(horizontal: 40),
               child: TextField(
+                keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {
                   setState(() {
                     email = value;
@@ -66,8 +65,8 @@ class _LoginState extends State<Login> {
               margin: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
               child: new GestureDetector(
                 onTap: () {
-                     Navigator.of(context).push(MaterialPageRoute(builder : (context)=> ForgotPassword()));
-                  },
+                  Navigator.pushNamed(context, forgorPassword);
+                },
                 child: Text(
                   translate('LOGIN.FORGOT_PASSWORD'),
                   style: TextStyle(

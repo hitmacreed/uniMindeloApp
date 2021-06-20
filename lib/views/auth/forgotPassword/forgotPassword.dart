@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
+import 'package:uni_mindelo/Widgets/background.dart';
 import 'package:uni_mindelo/apis/fireBaseCalls.dart';
-import 'package:uni_mindelo/components/background.dart';
-import 'package:uni_mindelo/components/colors.dart';
-
+import 'package:uni_mindelo/utils/colors.dart';
+import 'package:uni_mindelo/widgets/appBar.dart';
 
 class ForgotPassword extends StatefulWidget {
   @override
@@ -17,12 +17,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-        backgroundColor: AppBarColor,
-        leading: IconButton(icon:Icon(Icons.arrow_back,color: PrimaryBlackAssentColor),
-          onPressed:() => Navigator.pop(context, false),
-        )
+      appBar: CustomAppbar(
+        title: translate("APP_BAR.TITLE.FORGOT_PASSWORD"),
       ),
       body: Background(
         child: Column(
@@ -39,6 +35,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               alignment: Alignment.center,
               margin: EdgeInsets.symmetric(horizontal: 40),
               child: TextField(
+                keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {
                   setState(() {
                     email = value;
@@ -58,7 +55,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               child: RaisedButton(
                 onPressed: () {
                   setState(() {
-                        forgotPassword(email, context);
+                    forgotPassword(email, context);
                   });
                 },
                 shape: RoundedRectangleBorder(

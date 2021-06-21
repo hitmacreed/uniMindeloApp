@@ -1,4 +1,5 @@
 {
+    "LOADER_TITLE": "Aguarde",
     "LOGIN": {
         "TITLE": "Uni Mindelo",
         "BT_TITLE": "Login",
@@ -18,6 +19,17 @@
         "GRADES": "Ver Notas",
         "SEMESTER": "Semestre"
     },
+    "GRADES": {
+        "PROFESSOR_GRADE": "Esta nota foi lançada pelo professor(a):",
+        "GRADE_OK": "Foi aprovado nesta Disciplina com ",
+        "GRADE_NOK": "Não foi aprovado(a) nesta Disciplina",
+        "VALUE": " valores",
+        "BT_MAIL": "Contestar",
+        "BT_DOWNLOAD": "Resolução",
+        "EMAIL_BODY": "Venho por este meio contestar esta nota de ",
+        "EMAIL_SUBJECT": "Contestar nota",
+        "VALUES": " valores"
+    },
     "DIALOG": {
         "HEADER": {
             "ERROR": "Erro",
@@ -35,7 +47,6 @@
             "GRADES": "Notas"
         }
     },
-    "LOADER_TITLE": "Aguarde",
     "ERRORS": {
         "CHECK_FIELDS": "Verifique os campos",
         "USER_DONT_EXISTS": "Não há registro deste utilizador. O utilizador pode ter sido excluído.",

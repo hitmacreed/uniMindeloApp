@@ -1,4 +1,4 @@
-abstract class IGrades {
+class IGrades {
   String title;
   String grade;
   String semester;

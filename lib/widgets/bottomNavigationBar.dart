@@ -42,22 +42,21 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',
-          backgroundColor: bottomNavigationBarTheme_Home,
+          backgroundColor: bottomNavigationBarTheme,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.school),
           label: 'Aulas',
-          backgroundColor: bottomNavigationBarTheme_classes,
+          backgroundColor: bottomNavigationBarTheme,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.feed),
-          label: 'Noticias',
-          backgroundColor: bottomNavigationBarTheme_grades,
-        ),
+            icon: Icon(Icons.feed),
+            label: 'Noticias',
+            backgroundColor: bottomNavigationBarTheme),
         BottomNavigationBarItem(
           icon: Icon(Icons.settings),
           label: 'Settings',
-          backgroundColor: bottomNavigationBarTheme_settings,
+          backgroundColor: bottomNavigationBarTheme,
         ),
       ],
       currentIndex: _selectedIndex,

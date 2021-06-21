@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:uni_mindelo/utils/constants/errorConstants.dart';
 import 'package:uni_mindelo/utils/services/dialogService.dart';
 import 'package:uni_mindelo/utils/services/loaderService.dart';
+import 'package:uni_mindelo/utils/services/router.dart';
 import 'package:uni_mindelo/utils/services/storage.service.dart';
-import 'package:uni_mindelo/views/home/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 final _auth = FirebaseAuth.instance;
@@ -19,9 +19,7 @@ login(email, password, BuildContext context) async {
         .then((value) => {
               saveData(user_uid, value.user!.uid),
               dismissLoader(),
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Home()))
-              //print(value.user!.uid);
+              Navigator.pushNamed(context, homeRoute)
             });
   } on FirebaseAuthException catch (error) {
     dismissLoader();

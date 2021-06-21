@@ -9,7 +9,6 @@ const PrimaryWhiteAssentColor = Colors.white;
 const isPaid = Colors.greenAccent;
 const gradesOK = Colors.lightBlueAccent;
 const gradesNOK = Colors.red;
-const bottomNavigationBarTheme_Home = Colors.black87;
-const bottomNavigationBarTheme_classes = Colors.black87;
-const bottomNavigationBarTheme_grades = Colors.lightBlue;
-const bottomNavigationBarTheme_settings = Colors.lightBlue;
+const bottomNavigationBarTheme = Colors.black87;
+//const bottomNavigationBarTheme_2= Colors.lightBlue;
+

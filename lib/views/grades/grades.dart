@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:uni_mindelo/utils/colors.dart';
 import 'package:uni_mindelo/widgets/appBar.dart';
 import 'package:uni_mindelo/widgets/bottomNavigationBar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
 class Grades extends StatefulWidget {
@@ -17,6 +19,7 @@ class Grades extends StatefulWidget {
 class _GradesState extends State<Grades> {
   Widget build(BuildContext context) {
     List getUserGrades = getGrades(widget.userGrades);
+    getUserGrades.asMap();
     return Scaffold(
       appBar: CustomAppbar(
         title: translate("APP_BAR.TITLE.GRADES"),
@@ -29,10 +32,16 @@ class _GradesState extends State<Grades> {
               itemCount: getUserGrades.length,
               itemBuilder: (context, int index) {
                 final GlobalKey<ExpansionTileCardState> cards = new GlobalKey();
-                final userGrade = List.from(getUserGrades[index].toList());
+                final userGrade = List.from(getUserGrades[index]);
                 final gradeColor = double.parse(userGrade[index]["grade"]) <= 9
                     ? gradesNOK
                     : gradesOK;
+                final userAprovedNotAprovedf =
+                    double.parse(userGrade[index]["grade"]) <= 9
+                        ? translate('GRADES.GRADE_NOK')
+                        : translate('GRADES.GRADE_OK') +
+                            userGrade[index]["grade"] +
+                            translate('GRADES.VALUE');
                 return Container(
                   child: ExpansionTileCard(
                     key: cards,
@@ -41,7 +50,6 @@ class _GradesState extends State<Grades> {
                         foregroundColor: PrimaryWhiteAssentColor,
                         child: Text(userGrade[index]["grade"])),
                     title: Text(userGrade[index]["title"]),
-                    // subtitle: Text(userGrade[index]["semester"]),
                     children: <Widget>[
                       Divider(
                         thickness: 1.0,
@@ -55,7 +63,11 @@ class _GradesState extends State<Grades> {
                             vertical: 8.0,
                           ),
                           child: Text(
-                            "teste",
+                            translate('GRADES.PROFESSOR_GRADE') +
+                                '\n' +
+                                userGrade[index]["teacher"] +
+                                '\n' +
+                                userAprovedNotAprovedf,
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyText2!
@@ -69,41 +81,33 @@ class _GradesState extends State<Grades> {
                         buttonMinWidth: 90.0,
                         children: <Widget>[
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              send(userGrade[index]["teacherEmail"],
+                                  userGrade[index]["grade"]);
+                            },
                             child: Column(
                               children: <Widget>[
-                                Icon(Icons.arrow_downward),
+                                Icon(Icons.email),
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 2.0),
                                 ),
-                                Text('Open'),
+                                Text(translate('GRADES.BT_MAIL')),
                               ],
                             ),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              launchURL();
+                            },
                             child: Column(
                               children: <Widget>[
-                                Icon(Icons.arrow_upward),
+                                Icon(Icons.file_download),
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 2.0),
                                 ),
-                                Text('Close'),
-                              ],
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () {},
-                            child: Column(
-                              children: <Widget>[
-                                Icon(Icons.swap_vert),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 2.0),
-                                ),
-                                Text('Toggle'),
+                                Text(translate('GRADES.BT_DOWNLOAD')),
                               ],
                             ),
                           ),
@@ -121,5 +125,36 @@ class _GradesState extends State<Grades> {
 }
 
 List getGrades(userGrades) {
-  return List.filled(userGrades.length, userGrades, growable: false);
+  return new List.filled(userGrades.length, userGrades, growable: true);
+}
+
+launchURL() async {
+  //DEBUG SAMPLE PDF
+  const url = 'http://www.pdf995.com/samples/pdf.pdf';
+  if (await launch(
+    url,
+    forceSafariVC: false,
+    forceWebView: false,
+    enableDomStorage: true,
+  )) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+Future<void> send(recipientEmail, grade) async {
+  final Email email = Email(
+    body: translate('GRADES.EMAIL_BODY') + grade + translate('GRADES.VALUES'),
+    subject: translate('GRADES.EMAIL_SUBJECT'),
+    recipients: [recipientEmail],
+    isHTML: true,
+  );
+
+  try {
+    await FlutterEmailSender.send(email);
+    print("Email Enviado");
+  } catch (error) {
+    print(error);
+  }
 }

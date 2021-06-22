@@ -3,21 +3,28 @@ import 'package:uni_mindelo/utils/colors.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
+  final bool canBack;
 
-  const CustomAppbar({Key? key, required this.title}) : super(key: key);
+  const CustomAppbar({Key? key, required this.title, required this.canBack})
+      : super(key: key);
 
   @override
   Size get preferredSize => Size.fromHeight(60.0);
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-        automaticallyImplyLeading: true,
-        backgroundColor: AppBarColor,
-        title: Text(title),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: PrimaryBlackAssentColor),
-          onPressed: () => Navigator.pop(context, false),
-        ));
+    return canBack
+        ? AppBar(
+            backgroundColor: AppBarColor,
+            title: Text(title),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: PrimaryBlackAssentColor),
+              onPressed: () => Navigator.pop(context, false),
+            ))
+        : AppBar(
+            automaticallyImplyLeading: true,
+            backgroundColor: AppBarColor,
+            title: Text(title),
+          );
   }
 }

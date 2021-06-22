@@ -19,10 +19,10 @@ class Grades extends StatefulWidget {
 class _GradesState extends State<Grades> {
   Widget build(BuildContext context) {
     List getUserGrades = getGrades(widget.userGrades);
-    getUserGrades.asMap();
     return Scaffold(
       appBar: CustomAppbar(
         title: translate("APP_BAR.TITLE.GRADES"),
+        canBack: true,
       ),
       body: Stack(
         children: <Widget>[
@@ -133,8 +133,6 @@ launchURL() async {
   const url = 'http://www.pdf995.com/samples/pdf.pdf';
   if (await launch(
     url,
-    forceSafariVC: false,
-    forceWebView: false,
     enableDomStorage: true,
   )) {
     await launch(url);

@@ -7,7 +7,8 @@ import 'package:uni_mindelo/apis/fireBaseCalls.dart';
 import 'package:uni_mindelo/utils/colors.dart';
 import 'package:uni_mindelo/utils/services/router.dart';
 import 'package:uni_mindelo/utils/services/storage.service.dart';
-import 'package:uni_mindelo/widgets/bottomNavigationBar.dart';
+import 'package:uni_mindelo/widgets/appBar.dart';
+import 'package:uni_mindelo/widgets/drawer.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -29,13 +30,17 @@ class _HomeState extends State<Home> {
       }
     });
     return Scaffold(
+      appBar: CustomAppbar(
+        title: translate("APP_BAR.TITLE.HOME"),
+        canBack: false,
+      ),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
           FractionallySizedBox(
             alignment: Alignment.topCenter,
-            heightFactor: 0.8,
-            widthFactor: 1,
+            heightFactor: 0.6,
+            widthFactor: 4,
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -85,7 +90,7 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(),
+      drawer: CustomDrawer(),
     );
   }
 
@@ -290,25 +295,6 @@ class _HomeState extends State<Home> {
                                     color: PrimaryBlackAssentColor,
                                   )),
                             ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Card(
-                            color: PrimaryBlackAssentColor,
-                            child: ListTile(
-                                leading: Icon(Icons.logout,
-                                    color: PrimaryWhiteAssentColor),
-                                title: InkWell(
-                                  child: Text('Sair',
-                                      style: TextStyle(
-                                        color: PrimaryWhiteAssentColor,
-                                      )),
-                                  onTap: () {
-                                    deleteData(user_uid);
-                                    Navigator.pushNamed(context, loginRoute);
-                                  },
-                                )),
                           ),
                         ],
                       ),

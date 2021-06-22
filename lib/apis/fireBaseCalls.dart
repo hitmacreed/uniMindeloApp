@@ -127,3 +127,7 @@ forgotPassword(email, BuildContext context) async {
 getUserData(userUid) {
   return _fireStore.collection('Users').doc(userUid).get();
 }
+
+getFeedData() {
+  return _fireStore.collection('Feed').snapshots();
+}

@@ -30,6 +30,10 @@
         "EMAIL_SUBJECT": "Contestar nota",
         "VALUES": " valores"
     },
+    "FEED": {
+        "BT_URL": "Ver no FaceBook",
+        "BT_SHARE": "Partilhar"
+    },
     "DIALOG": {
         "HEADER": {
             "ERROR": "Erro",
@@ -44,7 +48,17 @@
     "APP_BAR": {
         "TITLE": {
             "FORGOT_PASSWORD": "Recuperar Conta",
-            "GRADES": "Notas"
+            "HOME": "Home",
+            "GRADES": "Notas",
+            "FEED": "Feed Notícias"
+        }
+    },
+    "DRAWER": {
+        "TITLE": {
+            "HOME": "Home",
+            "FEED": "Feed Notícias",
+            "CLASSES": "Minhas Aulas",
+            "LOGOUT": "Sair"
         }
     },
     "ERRORS": {

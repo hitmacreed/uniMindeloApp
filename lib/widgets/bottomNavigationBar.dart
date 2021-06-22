@@ -22,10 +22,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           pushToView(homeRoute);
           break;
         case 1:
-          //pushToView();
+          pushToView(feedRoute);
           break;
         case 2:
-          //pushToView();
+          //pushToView(feedRoute);
           break;
         case 3:
           //pushToView()
@@ -45,14 +45,14 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           backgroundColor: bottomNavigationBarTheme,
         ),
         BottomNavigationBarItem(
+            icon: Icon(Icons.feed),
+            label: 'Noticias',
+            backgroundColor: bottomNavigationBarTheme),
+        BottomNavigationBarItem(
           icon: Icon(Icons.school),
           label: 'Aulas',
           backgroundColor: bottomNavigationBarTheme,
         ),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.feed),
-            label: 'Noticias',
-            backgroundColor: bottomNavigationBarTheme),
         BottomNavigationBarItem(
           icon: Icon(Icons.settings),
           label: 'Settings',

@@ -19,6 +19,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     return Scaffold(
       appBar: CustomAppbar(
         title: translate("APP_BAR.TITLE.FORGOT_PASSWORD"),
+        canBack: true,
       ),
       body: Background(
         child: Column(

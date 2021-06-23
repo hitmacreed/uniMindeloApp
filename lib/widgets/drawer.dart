@@ -54,7 +54,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             title: Text(translate('DRAWER.TITLE.LOGOUT')),
             onTap: () {
               deleteData(user_uid);
-              Navigator.pushNamed(context, loginRoute);
+              pushToView(loginRoute);
             },
           ),
         ],

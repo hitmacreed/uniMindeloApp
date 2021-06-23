@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import 'package:uni_mindelo/utils/colors.dart';
+import 'package:uni_mindelo/utils/constants/colors.dart';
 import 'package:uni_mindelo/utils/services/router.dart';
 import 'package:uni_mindelo/utils/services/storage.service.dart';
 

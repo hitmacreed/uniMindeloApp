@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:uni_mindelo/apis/fireBaseCalls.dart';
-import 'package:uni_mindelo/utils/colors.dart';
+import 'package:uni_mindelo/utils/constants/colors.dart';
 import 'package:uni_mindelo/widgets/appBar.dart';
 import 'package:uni_mindelo/widgets/drawer.dart';
 import 'package:url_launcher/url_launcher.dart';

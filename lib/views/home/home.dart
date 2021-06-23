@@ -4,7 +4,7 @@ import 'package:flutter_translate/flutter_translate.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:uni_mindelo/apis/fireBaseCalls.dart';
-import 'package:uni_mindelo/utils/colors.dart';
+import 'package:uni_mindelo/utils/constants/colors.dart';
 import 'package:uni_mindelo/utils/services/router.dart';
 import 'package:uni_mindelo/utils/services/storage.service.dart';
 import 'package:uni_mindelo/widgets/appBar.dart';

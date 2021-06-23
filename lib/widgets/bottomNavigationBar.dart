@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:uni_mindelo/utils/colors.dart';
+import 'package:uni_mindelo/utils/constants/colors.dart';
 import 'package:uni_mindelo/utils/services/router.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {

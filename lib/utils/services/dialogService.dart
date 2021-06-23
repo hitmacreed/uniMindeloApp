@@ -4,7 +4,7 @@ import 'package:flutter_translate/flutter_translate.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:uni_mindelo/utils/services/router.dart';
-import '../colors.dart';
+import '../constants/colors.dart';
 
 // ignore: must_be_immutable
 class DialogService extends StatelessWidget {

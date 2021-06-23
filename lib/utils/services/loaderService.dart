@@ -1,6 +1,6 @@
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import '../colors.dart';
+import '../constants/colors.dart';
 
 showLoader() {
   EasyLoading.instance

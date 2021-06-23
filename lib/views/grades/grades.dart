@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import 'package:uni_mindelo/utils/colors.dart';
+import 'package:uni_mindelo/utils/constants/colors.dart';
 import 'package:uni_mindelo/widgets/appBar.dart';
-import 'package:uni_mindelo/widgets/bottomNavigationBar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
@@ -119,7 +118,6 @@ class _GradesState extends State<Grades> {
               }),
         ],
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }

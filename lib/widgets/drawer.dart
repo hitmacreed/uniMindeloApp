@@ -29,28 +29,35 @@ class _CustomDrawerState extends State<CustomDrawer> {
             child: Text(''),
           ),
           ListTile(
-            leading: Icon(Icons.home),
+            leading: Icon(Icons.home, color: drawerIconColor),
             title: Text(translate('DRAWER.TITLE.HOME')),
             onTap: () {
               pushToView(homeRoute);
             },
           ),
           ListTile(
-            leading: Icon(Icons.feed),
+            leading: Icon(Icons.feed, color: drawerIconColor),
             title: Text(translate('DRAWER.TITLE.FEED')),
             onTap: () {
               pushToView(feedRoute);
             },
           ),
           ListTile(
-            leading: Icon(Icons.grade),
+            leading: Icon(Icons.school, color: drawerIconColor),
             title: Text(translate('DRAWER.TITLE.CLASSES')),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
-            leading: Icon(Icons.logout),
+            leading: Icon(Icons.payment, color: drawerIconColor),
+            title: Text(translate('DRAWER.TITLE.PAYMENT')),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.logout, color: drawerIconColor),
             title: Text(translate('DRAWER.TITLE.LOGOUT')),
             onTap: () {
               deleteData(user_uid);

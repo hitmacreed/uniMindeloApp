@@ -18,7 +18,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   bool _isOpen = false;
   final String userId = getData(user_uid);
-  Map<String, dynamic> userData = {};
+  Map<String, dynamic>? userData = {};
   PanelController _panelController = PanelController();
   Widget build(BuildContext context) {
     var userId = getData(user_uid);
@@ -182,7 +182,7 @@ class _HomeState extends State<Home> {
                         child: FlatButton(
                           onPressed: () => Navigator.pushNamed(
                               context, gradesRoute,
-                              arguments: userData['data']['grades']),
+                              arguments: userData!['data']!['grades']),
                           color: PrimaryColor,
                           textColor: PrimaryWhiteAssentColor,
                           shape: RoundedRectangleBorder(
@@ -221,10 +221,11 @@ class _HomeState extends State<Home> {
                             child: ListTile(
                               leading: Icon(Icons.phone,
                                   color: PrimaryWhiteAssentColor),
-                              title: Text(userData['data']["phoneNumber"] ?? '',
-                                  style: TextStyle(
-                                    color: PrimaryWhiteAssentColor,
-                                  )),
+                              title:
+                                  Text(userData!['data']["phoneNumber"] ?? '',
+                                      style: TextStyle(
+                                        color: PrimaryWhiteAssentColor,
+                                      )),
                             ),
                           ),
                           SizedBox(
@@ -235,7 +236,7 @@ class _HomeState extends State<Home> {
                             child: ListTile(
                               leading: Icon(Icons.email,
                                   color: PrimaryWhiteAssentColor),
-                              title: Text(userData['data']["email"] ?? '',
+                              title: Text(userData!['data']["email"] ?? '',
                                   style: TextStyle(
                                     color: PrimaryWhiteAssentColor,
                                   )),
@@ -250,7 +251,7 @@ class _HomeState extends State<Home> {
                               leading: Icon(Icons.cake,
                                   color: PrimaryWhiteAssentColor),
                               title: Text(
-                                  ((userData['data']["birthDay"] ??
+                                  ((userData!['data']["birthDay"] ??
                                           '' as Timestamp)
                                       .toDate()
                                       .toString()
@@ -272,7 +273,7 @@ class _HomeState extends State<Home> {
                               title: Text(
                                   'Nº Estudante' +
                                       ' ' +
-                                      userData['data']["id_student"],
+                                      userData!['data']["id_student"],
                                   style: TextStyle(
                                     color: PrimaryWhiteAssentColor,
                                   )),
@@ -287,7 +288,7 @@ class _HomeState extends State<Home> {
                               leading: Icon(Icons.credit_card,
                                   color: PrimaryWhiteAssentColor),
                               title: Text(
-                                  userData['data']["isPaid"].toString() ==
+                                  userData!['data']["isPaid"].toString() ==
                                           'true'
                                       ? 'Propina Paga'
                                       : 'Propina por Pagar',
@@ -317,9 +318,9 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               Text(
-                userData['data']['userName'] +
+                userData!['data']!['userName'] +
                     ' ' +
-                    userData['data']['userSurname'],
+                    userData!['data']['userSurname'],
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 30,
@@ -329,7 +330,7 @@ class _HomeState extends State<Home> {
                 height: 8,
               ),
               Text(
-                userData['data']['course'],
+                userData!['data']['course'],
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -338,7 +339,9 @@ class _HomeState extends State<Home> {
                 height: 8,
               ),
               Text(
-                userData['data']['semester'] + ' ' + translate('HOME.SEMESTER'),
+                userData!['data']['semester'] +
+                    ' ' +
+                    translate('HOME.SEMESTER'),
                 style: TextStyle(
                   fontSize: 16,
                 ),

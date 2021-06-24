@@ -10,5 +10,6 @@ const isPaid = Colors.greenAccent;
 const gradesOK = Colors.lightBlueAccent;
 const gradesNOK = Colors.red;
 const bottomNavigationBarTheme = Colors.black87;
+const drawerIconColor = Colors.black;
 //const bottomNavigationBarTheme_2= Colors.lightBlue;
 

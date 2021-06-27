@@ -12,7 +12,8 @@ class DialogService extends StatelessWidget {
   final String title;
   bool dismissOnPopLogin;
   DialogService(
-      {required this.subTitle,
+      {
+      required this.subTitle,
       required this.title,
       required this.dismissOnPopLogin});
 

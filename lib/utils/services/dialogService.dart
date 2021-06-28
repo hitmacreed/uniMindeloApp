@@ -11,21 +11,27 @@ class DialogService extends StatelessWidget {
   final String subTitle;
   final String title;
   bool dismissOnPopLogin;
+  bool isCreditCard;
   DialogService(
-      {
-      required this.subTitle,
+      {required this.subTitle,
       required this.title,
-      required this.dismissOnPopLogin});
+      required this.dismissOnPopLogin,
+      required this.isCreditCard});
 
   dialogContent(BuildContext context) {}
 
   @override
   Widget build(BuildContext context) {
     return NetworkGiffyDialog(
-      image: Image.asset(
-        "assets/images/loginBaseDialog.gif",
-        fit: BoxFit.cover,
-      ),
+      image: !isCreditCard
+          ? Image.asset(
+              "assets/images/loginBaseDialog.gif",
+              fit: BoxFit.cover,
+            )
+          : Image.asset(
+              "assets/images/paymentInProcess.gif",
+              fit: BoxFit.cover,
+            ),
       entryAnimation: EntryAnimation.LEFT,
       title: Text(
         translate(title),

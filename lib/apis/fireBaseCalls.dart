@@ -37,7 +37,8 @@ forgotPassword(email, BuildContext context) async {
                 return DialogService(
                     subTitle: 'FORGOT_PASSWORD.EMAIL_SEND',
                     title: 'DIALOG.HEADER.SUCCESS',
-                    dismissOnPopLogin: true);
+                    dismissOnPopLogin: true,
+                    isCreditCard: false);
               }),
           dismissLoader()
         });
@@ -64,7 +65,8 @@ authErrorHandler(errorCode, context) {
             return DialogService(
                 subTitle: 'ERRORS.USER_DONT_EXISTS',
                 title: 'DIALOG.HEADER.ERROR',
-                dismissOnPopLogin: false);
+                dismissOnPopLogin: false,
+                isCreditCard: false);
           });
       break;
     case wrongPassword:
@@ -74,7 +76,8 @@ authErrorHandler(errorCode, context) {
             return DialogService(
                 subTitle: 'ERRORS.WRONG_PASSWORD',
                 title: 'DIALOG.HEADER.ERROR',
-                dismissOnPopLogin: false);
+                dismissOnPopLogin: false,
+                isCreditCard: false);
           });
       break;
     case tooManyRequests:
@@ -84,7 +87,8 @@ authErrorHandler(errorCode, context) {
             return DialogService(
                 subTitle: 'ERRORS.TOO_MANY_REQUESTS',
                 title: 'DIALOG.HEADER.WARNING',
-                dismissOnPopLogin: false);
+                dismissOnPopLogin: false,
+                isCreditCard: false);
           });
       break;
     case invalidEmail:
@@ -94,7 +98,8 @@ authErrorHandler(errorCode, context) {
             return DialogService(
                 subTitle: 'ERRORS.INVALID_EMAIL',
                 title: 'DIALOG.HEADER.ERROR',
-                dismissOnPopLogin: false);
+                dismissOnPopLogin: false,
+                isCreditCard: false);
           });
       break;
     default:

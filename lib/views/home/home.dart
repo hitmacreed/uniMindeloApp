@@ -268,7 +268,7 @@ class _HomeState extends State<Home> {
                           Card(
                             color: PrimaryColor,
                             child: ListTile(
-                              leading: Icon(Icons.credit_card,
+                              leading: Icon(Icons.fingerprint,
                                   color: PrimaryWhiteAssentColor),
                               title: Text(
                                   'Nº Estudante' +

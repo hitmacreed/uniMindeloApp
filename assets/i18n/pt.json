@@ -34,6 +34,20 @@
         "BT_URL": "Ver no FaceBook",
         "BT_SHARE": "Partilhar"
     },
+    "PAYMENT": {
+        "LABEL_NUMBER": "Número do Cartão",
+        "HINT_NUMBER": "XXXX XXXX XXXX XXXX",
+        "LABEL_DATE": "MM/AA",
+        "HINT_DATE": "Validade",
+        "LABEL_CVV": "CVV",
+        "HINT_CVV": "***",
+        "LABEL_CARD_HOLDER": "Titular do Cartão",
+        "VALID_PAYMENT_TITLE": "Pago",
+        "VALID_PAYMENT_SUBTITLE": "Propina pago com sucesso",
+        "INVALID_PAYMENT_TITLE": "Erro",
+        "INVALID_PAYMENT_SUBTITLE": "Ocorreu um erro ao processar transação.",
+        "BT_PAY": "Pagar"
+    },
     "DIALOG": {
         "HEADER": {
             "ERROR": "Erro",
@@ -50,7 +64,8 @@
             "FORGOT_PASSWORD": "Recuperar Conta",
             "HOME": "Home",
             "GRADES": "Notas",
-            "FEED": "Feed Notícias"
+            "FEED": "Feed Notícias",
+            "PAYMENT": "Propina"
         }
     },
     "DRAWER": {

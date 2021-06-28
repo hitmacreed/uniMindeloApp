@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uni_mindelo/utils/constants/colors.dart';
-import 'package:uni_mindelo/utils/services/router.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
@@ -19,13 +18,14 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       _selectedIndex = index;
       switch (_selectedIndex) {
         case 0:
-          pushToView(homeRoute);
+          //pushToView()
           break;
         case 1:
-          pushToView(feedRoute);
+          //pushToView()
           break;
         case 2:
-          //pushToView(feedRoute);
+
+          ///pushToView()
           break;
         case 3:
           //pushToView()

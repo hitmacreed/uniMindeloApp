@@ -28,6 +28,8 @@ dependencies:
   url_launcher: ^6.0.6
   share: ^2.0.4
   flutter_credit_card: ^2.0.0
+  flutter_week_view: ^1.1.0
+
 
 dev_dependencies:
   flutter_test:

@@ -21,8 +21,7 @@ class _HomeState extends State<Home> {
   Map<String, dynamic>? userData = {};
   PanelController _panelController = PanelController();
   Widget build(BuildContext context) {
-    var userId = getData(user_uid);
-    getUserData(userId).then((DocumentSnapshot documentSnapshot) async {
+    getUserData().then((DocumentSnapshot documentSnapshot) async {
       if (documentSnapshot.exists && documentSnapshot.data() != null) {
         setState(() {
           userData = {"data": documentSnapshot.data()};

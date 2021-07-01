@@ -13,3 +13,4 @@ const bottomNavigationBarTheme = Colors.black87;
 const drawerIconColor = Colors.black;
 const creditCardColor = Colors.grey;
 const creditCardColorBtPay = Colors.lightBlueAccent;
+const currentTimeCircleColor = Colors.blue;

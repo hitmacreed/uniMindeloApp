@@ -9,6 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 final _auth = FirebaseAuth.instance;
 final FirebaseFirestore _fireStore = FirebaseFirestore.instance;
+final userId = getData(user_uid);
 
 login(email, password, BuildContext context) async {
   try {
@@ -48,12 +49,19 @@ forgotPassword(email, BuildContext context) async {
   }
 }
 
-getUserData(userUid) {
-  return _fireStore.collection('Users').doc(userUid).get();
+getUserData() {
+  return _fireStore.collection('Users').doc(userId).get();
 }
 
 getFeedData() {
   return _fireStore.collection('Feed').snapshots();
+}
+
+getUserClasses() {
+  return _fireStore
+      .collection('Classes')
+      .where('classId', isEqualTo: 'sFUthBc3WpxBDaeNSsxS')
+      .snapshots();
 }
 
 authErrorHandler(errorCode, context) {

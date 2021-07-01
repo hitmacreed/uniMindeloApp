@@ -7,6 +7,7 @@ import 'package:uni_mindelo/widgets/appBar.dart';
 import 'package:uni_mindelo/widgets/drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share/share.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class Feed extends StatefulWidget {
   @override
@@ -56,8 +57,9 @@ class _FeedState extends State<Feed> {
                           ),
                           title: Text(feed["title"]),
                         ),
-                        Image.network(
-                          feed["img"],
+                        FadeInImage.memoryNetwork(
+                          image: feed["img"],
+                          placeholder: kTransparentImage,
                           fit: BoxFit.cover,
                         ),
                         Padding(

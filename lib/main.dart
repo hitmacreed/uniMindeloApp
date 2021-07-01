@@ -4,6 +4,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get_storage/get_storage.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:splashscreen/splashscreen.dart';
 import 'package:uni_mindelo/utils/constants/colors.dart';
 import 'package:uni_mindelo/utils/services/router.dart';
 import 'package:uni_mindelo/utils/services/storage.service.dart';
@@ -53,9 +55,9 @@ class Main extends StatelessWidget {
                 return Text("erro");
               } else if (snapshot.hasData) {
                 if (getData(user_uid) != null) {
-                  return Home();
+                  return Splash(homeRoute);
                 } else {
-                  return Login();
+                  return Splash(loginRoute);
                 }
               } else {
                 return Center(
@@ -66,5 +68,21 @@ class Main extends StatelessWidget {
         builder: EasyLoading.init(),
       ),
     );
+  }
+}
+
+class Splash extends StatelessWidget {
+  Splash(this.route);
+  final String route;
+
+  @override
+  Widget build(BuildContext context) {
+    return new SplashScreen(
+        seconds: 3,
+        navigateAfterSeconds: route == homeRoute ? Home() : Login(),
+        backgroundColor: Colors.white,
+        imageBackground: AssetImage('assets/images/home.jpeg'),
+        photoSize: 20,
+        loaderColor: PrimaryBlack);
   }
 }

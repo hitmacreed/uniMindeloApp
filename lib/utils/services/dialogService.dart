@@ -53,7 +53,9 @@ class DialogService extends StatelessWidget {
           Navigator.pop(context, true);
         }
       },
-      // onOkButtonPressed: () {},
+/*       onOkButtonPressed: () {
+        Navigator.pop(context, true);
+      }, */
     );
   }
 }

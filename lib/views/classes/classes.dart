@@ -5,7 +5,6 @@ import 'package:flutter_week_view/flutter_week_view.dart';
 import 'package:uni_mindelo/apis/fireBaseCalls.dart';
 import 'package:uni_mindelo/utils/constants/colors.dart';
 import 'package:uni_mindelo/widgets/appBar.dart';
-import 'package:intl/intl.dart';
 
 // ignore: must_be_immutable
 class Classes extends StatefulWidget {
@@ -27,7 +26,9 @@ class _ClassesState extends State<Classes> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text("Loading");
+          return Center(
+            child: CircularProgressIndicator(),
+          );
         }
 
         var getClasses = snapshot.data!.docs.map((DocumentSnapshot document) {
@@ -39,9 +40,8 @@ class _ClassesState extends State<Classes> {
                 FlutterWeekViewEvent(
                   title: el["title"],
                   description: el["description"],
-                  start:
-                      date.add(Duration(hours: convertTimeStamp(el["start"]))),
-                  end: date.add(Duration(hours: convertTimeStamp(el["end"]))),
+                  start: date.add(Duration(hours: 9)),
+                  end: date.add(Duration(hours: 13)),
                 ),
               )
             });
@@ -69,10 +69,4 @@ class _ClassesState extends State<Classes> {
       },
     );
   }
-}
-
-convertTimeStamp(Timestamp timestamp) {
-  String convertedDate;
-  convertedDate = DateFormat.j().format(timestamp.toDate());
-  return int.parse(convertedDate.split(" ")[0]);
 }

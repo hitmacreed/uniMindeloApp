@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:uni_mindelo/utils/constants/colors.dart';
+import 'package:uni_mindelo/utils/services/launchUrlService.dart';
 import 'package:uni_mindelo/widgets/appBar.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
 class Grades extends StatefulWidget {
@@ -97,7 +98,8 @@ class _GradesState extends State<Grades> {
                           ),
                           TextButton(
                             onPressed: () {
-                              launchURL();
+                              launchURL(
+                                  'http://www.pdf995.com/samples/pdf.pdf');
                             },
                             child: Column(
                               children: <Widget>[
@@ -124,19 +126,6 @@ class _GradesState extends State<Grades> {
 
 List getGrades(userGrades) {
   return new List.filled(userGrades.length, userGrades, growable: true);
-}
-
-launchURL() async {
-  //DEBUG SAMPLE PDF
-  const url = 'http://www.pdf995.com/samples/pdf.pdf';
-  if (await launch(
-    url,
-    enableDomStorage: true,
-  )) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
 }
 
 Future<void> send(recipientEmail, grade) async {

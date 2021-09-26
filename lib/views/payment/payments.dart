@@ -7,7 +7,11 @@ import 'package:uni_mindelo/utils/constants/colors.dart';
 import 'package:uni_mindelo/utils/services/dialogService.dart';
 import 'package:uni_mindelo/widgets/appBar.dart';
 
+// ignore: must_be_immutable
 class Payment extends StatefulWidget {
+  var title;
+  Payment({this.title});
+
   @override
   State<StatefulWidget> createState() {
     return PaymentState();
@@ -26,7 +30,7 @@ class PaymentState extends State<Payment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppbar(
-        title: translate("APP_BAR.TITLE.PAYMENT"),
+        title: widget.title,
         canBack: false,
       ),
       resizeToAvoidBottomInset: true,
@@ -41,7 +45,10 @@ class PaymentState extends State<Payment> {
               cvvCode: cvvCode,
               showBackView: isCvvFocused,
               obscureCardNumber: true,
+              // ignore: non_constant_identifier_names
               obscureCardCvv: true,
+              // ignore: non_constant_identifier_names
+              onCreditCardWidgetChange: (CreditCardBrand) {},
             ),
             Expanded(
               child: SingleChildScrollView(

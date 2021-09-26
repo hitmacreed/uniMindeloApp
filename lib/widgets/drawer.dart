@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
+import 'package:uni_mindelo/utils/services/launchUrlService.dart';
 import 'package:uni_mindelo/utils/services/router.dart';
 import 'package:uni_mindelo/utils/services/storage.service.dart';
 
@@ -33,8 +34,24 @@ class _CustomDrawerState extends State<CustomDrawer> {
               onTap: () => pushToView(classes)),
           item(
               icon: Icons.payment,
-              text: translate('DRAWER.TITLE.PAYMENT'),
-              onTap: () => pushToView(payment)),
+              text: translate('DRAWER.TITLE.BRIBES'),
+              onTap: () => pushToView(bribes)),
+          item(
+              icon: Icons.movie_filter,
+              text: translate('DRAWER.TITLE.MOVIES'),
+              onTap: () => pushToView(cineMindelo)),
+          item(
+              icon: Icons.school,
+              text: translate('DRAWER.TITLE.MOODLE'),
+              onTap: () => {
+                    launchURL('https://moodle.um.edu.cv/'),
+                  }),
+          item(
+              icon: Icons.facebook,
+              text: translate('DRAWER.TITLE.FACEBOOK'),
+              onTap: () => {
+                    launchURL('https://www.facebook.com/UniversidadeDoMindelo'),
+                  }),
           item(
               icon: Icons.logout,
               text: translate('DRAWER.TITLE.LOGOUT'),

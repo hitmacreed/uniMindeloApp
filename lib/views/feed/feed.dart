@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
+import 'package:octo_image/octo_image.dart';
 import 'package:uni_mindelo/apis/fireBaseCalls.dart';
 import 'package:uni_mindelo/utils/constants/colors.dart';
+import 'package:uni_mindelo/utils/services/launchUrlService.dart';
 import 'package:uni_mindelo/widgets/appBar.dart';
 import 'package:uni_mindelo/widgets/drawer.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:share/share.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class Feed extends StatefulWidget {
   @override
@@ -26,7 +26,9 @@ class _FeedState extends State<Feed> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text("Loading");
+          return Center(
+            child: CircularProgressIndicator(),
+          );
         }
 
         return new Scaffold(
@@ -57,10 +59,19 @@ class _FeedState extends State<Feed> {
                           ),
                           title: Text(feed["title"]),
                         ),
-                        FadeInImage.memoryNetwork(
-                          image: feed["img"],
-                          placeholder: kTransparentImage,
-                          fit: BoxFit.cover,
+                        OctoImage(
+                          image: NetworkImage(feed["img"]),
+                          progressIndicatorBuilder: (context, progress) {
+                            double? value;
+                            var expectedBytes = progress?.expectedTotalBytes;
+                            if (progress != null && expectedBytes != null) {
+                              value = progress.cumulativeBytesLoaded /
+                                  expectedBytes;
+                            }
+                            return CircularProgressIndicator(value: value);
+                          },
+                          errorBuilder: (context, error, stacktrace) =>
+                              Icon(Icons.error),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(16.0),
@@ -113,6 +124,11 @@ class _FeedState extends State<Feed> {
                             ),
                           ],
                         ),
+                        new Divider(
+                          height: 5,
+                          color: PrimaryGreyColor,
+                          thickness: 5.0,
+                        ),
                       ],
                     );
                   }).toList(),
@@ -123,16 +139,5 @@ class _FeedState extends State<Feed> {
         );
       },
     );
-  }
-}
-
-launchURL(pageUrl) async {
-  if (await launch(
-    pageUrl,
-    enableDomStorage: true,
-  )) {
-    await launch(pageUrl);
-  } else {
-    throw 'Could not launch $pageUrl';
   }
 }

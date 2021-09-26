@@ -9,7 +9,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 final _auth = FirebaseAuth.instance;
 final FirebaseFirestore _fireStore = FirebaseFirestore.instance;
-final userId = getData(user_uid);
+final userID = getData(user_uid);
+final classID = getData(classId);
 
 login(email, password, BuildContext context) async {
   try {
@@ -50,7 +51,7 @@ forgotPassword(email, BuildContext context) async {
 }
 
 getUserData() {
-  return _fireStore.collection('Users').doc(userId).get();
+  return _fireStore.collection('Users').doc(userID).get();
 }
 
 getFeedData() {
@@ -59,9 +60,20 @@ getFeedData() {
 
 getUserClasses() {
   return _fireStore
-      .collection('Classes')
-      .where('classId', isEqualTo: 'sFUthBc3WpxBDaeNSsxS')
+      .collection('ClassesSchedule')
+      .where('classId', isEqualTo: classID)
       .snapshots();
+}
+
+getUserBribes() {
+  return _fireStore
+      .collection('UserBribes')
+      .where('userId', isEqualTo: userID)
+      .snapshots();
+}
+
+cineMindeloMovies() {
+  return _fireStore.collection('CineMindeloMovies').snapshots();
 }
 
 authErrorHandler(errorCode, context) {

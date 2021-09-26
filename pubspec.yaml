@@ -1,5 +1,5 @@
 name: uni_mindelo
-description: A new Flutter project.
+description: Prototype.
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
@@ -17,21 +17,24 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_translate: ^3.0.1
   firebase_core: ^1.3.0
-  firebase_auth: ^1.1.1
-  cloud_firestore: "^2.2.2"
+  firebase_auth: ^3.1.1
+  cloud_firestore: "^2.5.2"
   giffy_dialog: ^1.8.0
   get_storage: ^2.0.2
   flutter_easyloading: ^3.0.0
-  sliding_up_panel: ^1.0.0
+  sliding_up_panel: ^2.0.0+1
   expansion_tile_card: ^2.0.0
-  flutter_email_sender: ^5.0.0
+  flutter_email_sender: ^4.0.0
   url_launcher: ^6.0.6
   share: ^2.0.4
-  flutter_credit_card: ^2.0.0
+  flutter_credit_card: ^3.0.0
   flutter_week_view: ^1.1.0
   splashscreen: ^1.3.5
   transparent_image: ^2.0.0
-
+  ticketview: ^1.0.0
+  worm_indicator: ^0.2.4
+  octo_image: ^1.0.0+1
+  cached_network_image: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -51,8 +54,3 @@ flutter:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700

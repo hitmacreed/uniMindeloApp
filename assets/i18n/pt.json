@@ -46,7 +46,20 @@
         "VALID_PAYMENT_SUBTITLE": "Propina pago com sucesso",
         "INVALID_PAYMENT_TITLE": "Erro",
         "INVALID_PAYMENT_SUBTITLE": "Ocorreu um erro ao processar transação.",
-        "BT_PAY": "Pagar"
+        "BT_PAY": "Pagar",
+        "BT_PAY_INVOICE": "Fatura",
+        "PAYMENT_REFERENCE": "Pagamento Referente a:",
+        "PAYMENT_DUE": "Caso a propina não for paga no prazo indicado a mesma sera congelada até efetuar o pagamento",
+        "PAYMENT_DUE_PAID": "Valor da propina Liquidada",
+        "AMOUNT_TO_PAY": "Valor a pagar:"
+    },
+    "TICKETS": {
+        "MOVIE": "Filme:",
+        "PLACE": "Local:",
+        "PRICE": "Preço:",
+        "DATE": "Data:",
+        "PEOPLE": "Pessoas:",
+        "INFO": "Apresentar Billhete Digital na entrada do local."
     },
     "DIALOG": {
         "HEADER": {
@@ -66,7 +79,10 @@
             "GRADES": "Notas",
             "FEED": "Feed Notícias",
             "CLASSES": "Minhas Aulas",
-            "PAYMENT": "Propina"
+            "PAYMENT": "Pagamento",
+            "BRIBES": "Propinas",
+            "CINE_MINDELO": "CineMindelo",
+            "TICKECTS": "Meus Bilhetes"
         }
     },
     "DRAWER": {
@@ -74,7 +90,10 @@
             "HOME": "Home",
             "FEED": "Feed Notícias",
             "CLASSES": "Minhas Aulas",
-            "PAYMENT": "Propina",
+            "BRIBES": "Propinas",
+            "MOVIES": "CineMindelo",
+            "FACEBOOK": "Nosso FaceBook",
+            "MOODLE": "Moodle",
             "LOGOUT": "Sair"
         }
     },

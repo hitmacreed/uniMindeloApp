@@ -4,6 +4,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_fonts/google_fonts.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:splashscreen/splashscreen.dart';
 import 'package:uni_mindelo/utils/constants/colors.dart';
@@ -43,10 +44,12 @@ class Main extends StatelessWidget {
         localizationsDelegates: [localizationDelegate],
         debugShowCheckedModeBanner: true,
         theme: ThemeData(
-          primaryColor: PrimaryColor,
-          scaffoldBackgroundColor: PrimaryWhiteAssentColor,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
+            primaryColor: PrimaryColor,
+            scaffoldBackgroundColor: PrimaryWhiteAssentColor,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+            textTheme: GoogleFonts.latoTextTheme(
+              Theme.of(context).textTheme,
+            )),
         home: FutureBuilder(
             future: _fbApp,
             builder: (context, snapshot) {

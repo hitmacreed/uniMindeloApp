@@ -82,7 +82,22 @@ flutter run lib/main.dart
 
 ![Alt text](/art/cineMindelo.gif)
 
+ ```bash   _
+       .__(.)< (Sou um gato continua a descer... MEOW!!!)
+        \___)   
+ ~~~~~~~~~~~~~~~~~~
+```
 
+#
+## TODO : [ ] Desktop App (Windows & Mac OS) - Em Desenvolvimento.
+\
+![Alt text](/art/desktopApp1.png)
+\
+\
+![Alt text](/art/desktopApp2.png)
+
+
+#
 ## License
 
 ```

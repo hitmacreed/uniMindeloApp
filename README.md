@@ -76,7 +76,7 @@ flutter run lib/main.dart
 \
 ![Alt text](/art/login.gif) \ ![Alt text](/art/recuperar_pw.gif) 
 
-![Alt text](/art/home.gif) \ ![Alt text](/art/feed.gif) 
+![Alt text](/art/home.gif) \ ![Alt text](/art/feeds.gif) 
 
 ![Alt text](/art/aulas.gif) \ ![Alt text](/art/propinas.gif)
 

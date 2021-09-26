@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:uni_mindelo/utils/constants/colors.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
@@ -16,7 +17,10 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     return canBack
         ? AppBar(
             backgroundColor: AppBarColor,
-            title: Text(title),
+            title: Text(
+              title,
+              style: GoogleFonts.lato(),
+            ),
             leading: IconButton(
                 icon: Icon(Icons.arrow_back, color: PrimaryBlackAssentColor),
                 onPressed: () => Navigator.of(context).pop()))

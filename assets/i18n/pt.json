@@ -1,0 +1,107 @@
+{
+    "LOADER_TITLE": "Aguarde",
+    "LOGIN": {
+        "TITLE": "Uni Mindelo",
+        "BT_TITLE": "Login",
+        "USERNAME": "E-mail ou número de telemóvel",
+        "PASSWORD": "Palavra-passe",
+        "FORGOT_PASSWORD": "Esqueceste a tua palavra-passe?"
+    },
+    "FORGOT_PASSWORD": {
+        "TITLE": "Uni Mindelo",
+        "BT_TITLE": "Recuperar Conta",
+        "USERNAME": "E-mail ou número de telemóvel",
+        "EMAIL_SEND": "Um E-mail foi enviado para a sua caixa de correio , por favor verifique."
+    },
+    "HOME": {
+        "TITLE": "Meu Curso",
+        "PROFILE": "Ver Perfil",
+        "GRADES": "Ver Notas",
+        "SEMESTER": "Semestre"
+    },
+    "GRADES": {
+        "PROFESSOR_GRADE": "Esta nota foi lançada pelo professor(a):",
+        "GRADE_OK": "Foi aprovado nesta Disciplina com ",
+        "GRADE_NOK": "Não foi aprovado(a) nesta Disciplina",
+        "VALUE": " valores",
+        "BT_MAIL": "Contestar",
+        "BT_DOWNLOAD": "Resolução",
+        "EMAIL_BODY": "Venho por este meio contestar esta nota de ",
+        "EMAIL_SUBJECT": "Contestar nota",
+        "VALUES": " valores"
+    },
+    "FEED": {
+        "BT_URL": "Ver no FaceBook",
+        "BT_SHARE": "Partilhar"
+    },
+    "PAYMENT": {
+        "LABEL_NUMBER": "Número do Cartão",
+        "HINT_NUMBER": "XXXX XXXX XXXX XXXX",
+        "LABEL_DATE": "MM/AA",
+        "HINT_DATE": "Validade",
+        "LABEL_CVV": "CVV",
+        "HINT_CVV": "***",
+        "LABEL_CARD_HOLDER": "Titular do Cartão",
+        "VALID_PAYMENT_TITLE": "Pago",
+        "VALID_PAYMENT_SUBTITLE": "Propina pago com sucesso",
+        "INVALID_PAYMENT_TITLE": "Erro",
+        "INVALID_PAYMENT_SUBTITLE": "Ocorreu um erro ao processar transação.",
+        "BT_PAY": "Pagar",
+        "BT_PAY_INVOICE": "Fatura",
+        "PAYMENT_REFERENCE": "Pagamento Referente a:",
+        "PAYMENT_DUE": "Caso a propina não for paga no prazo indicado a mesma sera congelada até efetuar o pagamento",
+        "PAYMENT_DUE_PAID": "Valor da propina Liquidada",
+        "AMOUNT_TO_PAY": "Valor a pagar:"
+    },
+    "TICKETS": {
+        "MOVIE": "Filme:",
+        "PLACE": "Local:",
+        "PRICE": "Preço:",
+        "DATE": "Data:",
+        "PEOPLE": "Pessoas:",
+        "INFO": "Apresentar Billhete Digital na entrada do local."
+    },
+    "DIALOG": {
+        "HEADER": {
+            "ERROR": "Erro",
+            "SUCCESS": "Successo",
+            "WARNING": "Alerta"
+        },
+        "DIALOG_BT": {
+            "OK": "OK",
+            "CANCEL": "Cancelar"
+        }
+    },
+    "APP_BAR": {
+        "TITLE": {
+            "FORGOT_PASSWORD": "Recuperar Conta",
+            "HOME": "Home",
+            "GRADES": "Notas",
+            "FEED": "Feed Notícias",
+            "CLASSES": "Minhas Aulas",
+            "PAYMENT": "Pagamento",
+            "BRIBES": "Propinas",
+            "CINE_MINDELO": "CineMindelo",
+            "TICKECTS": "Meus Bilhetes"
+        }
+    },
+    "DRAWER": {
+        "TITLE": {
+            "HOME": "Home",
+            "FEED": "Feed Notícias",
+            "CLASSES": "Minhas Aulas",
+            "BRIBES": "Propinas",
+            "MOVIES": "CineMindelo",
+            "FACEBOOK": "Nosso FaceBook",
+            "MOODLE": "Moodle",
+            "LOGOUT": "Sair"
+        }
+    },
+    "ERRORS": {
+        "CHECK_FIELDS": "Verifique os campos",
+        "USER_DONT_EXISTS": "Não há registro deste utilizador. O utilizador pode ter sido excluído.",
+        "WRONG_PASSWORD": "Password Errada",
+        "TOO_MANY_REQUESTS": "Atingiu o limite de tentativas por favor tente novamente daqui alguns minutos",
+        "INVALID_EMAIL": "E-mail Invalído"
+    }
+}

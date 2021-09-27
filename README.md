@@ -25,6 +25,13 @@ flutter run lib/main.dart
 ```
 #
 
+### LOGIN
+```
+email:kevindiasdeda@hotmail.com
+pass:1234567890
+```
+#
+
 ## Estrutura  da APP
 
  ```bash

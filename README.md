@@ -125,12 +125,12 @@ pass:1234567890
 
     |-- Users  
         {
-        "phoneNumber": "966303293",
+        "phoneNumber": "966303XXX",
         "userName": "Kevin",
         "course": "Engenharia Informática",
         "userSurname": "Dias",
         "isPaid": true,
-        "address": "rua cidade de setubal n1 2A Agualva Cacem",
+        "address": "rua cidade de XXX n1 2A XXX",
         "semester": "3",
         "classId": "sFUthBc3WpxBDaeNSsxS",
         "grades": [
